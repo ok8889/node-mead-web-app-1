@@ -18,7 +18,7 @@ weatherForm.addEventListener("submit", e => {
     
     const location = search.value;
     
-    fetch("https://252b067c3e5a40028a67e42a6cb116c9.vfs.cloud9.us-east-2.amazonaws.com/weather?address=" + location).then(response => {
+    fetch("/weather?address=" + location).then(response => {
         response.json().then(data => {
             if(data.error){
                 return paragraph.textContent = data.error;

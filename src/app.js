@@ -1,6 +1,7 @@
 const path = require("path");
 const express = require("express");
 const app = express();
+const port = process.env.port || 3000;
 const hbs = require("hbs");
 
 const geocode = require("./utils/geocode");
@@ -91,5 +92,5 @@ app.get("*", (req, res) => {
 });
 
 
-app.listen(process.env.PORT, console.log(`App running on port: ${process.env.PORT}`));
+app.listen(port, console.log(`App running on port: ${process.env.PORT}`));
 
